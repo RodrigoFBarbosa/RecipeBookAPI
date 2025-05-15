@@ -124,7 +124,7 @@
     <value>The e-mail must not be empty.</value>
   </data>
   <data name="EMAIL_INVALID" xml:space="preserve">
-    <value>The e-mail addres is invalid.</value>
+    <value>The e-mail address is invalid.</value>
   </data>
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>The name cannot be empty.</value>
