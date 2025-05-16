@@ -60,7 +60,7 @@ public class RegisterUserUseCaseTest
 
     }
 
-    private RegisterUserUseCase CreateUseCase(string? email = null)
+    private static RegisterUserUseCase CreateUseCase(string? email = null)
     {
 
         var mapper = MapperBuilder.Build();

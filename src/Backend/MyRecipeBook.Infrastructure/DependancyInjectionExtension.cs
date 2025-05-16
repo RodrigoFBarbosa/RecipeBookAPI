@@ -20,8 +20,6 @@ public static class DependancyInjectionExtension
         if (configuration.IsUnitTestEnvironment())
             return;
 
-        var databaseType = configuration.GetConnectionString("ConnectionStrings");
-
         AddDbContext_SqlServer(services, configuration);
         AddFluentMigrator_SqlServer(services, configuration);
     }

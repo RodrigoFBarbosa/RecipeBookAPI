@@ -11,7 +11,7 @@ public static class ConfigurationExtension
     }
     public static void DatabaseType(this IConfiguration configuration)
     {
-        
+        // to test in more than one database in the future
     }
 
     public static string ConnectionString(this IConfiguration configuration)

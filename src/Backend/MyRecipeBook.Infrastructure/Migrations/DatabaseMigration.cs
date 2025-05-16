@@ -2,6 +2,7 @@
 using FluentMigrator.Runner;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
+using MyRecipeBook.Domain.Extensions;
 
 namespace MyRecipeBook.Infrastructure.Migrations;
 
@@ -29,7 +30,7 @@ public static class DatabaseMigration
 
         var records = dbConnection.Query("SELECT * FROM sys.databases WHERE name = @name", parameters);
 
-        if (records.Any() == false)
+        if (records.Any().IsFalse())
             dbConnection.Execute($"CREATE DATABASE {databaseName}");   
     }
 
