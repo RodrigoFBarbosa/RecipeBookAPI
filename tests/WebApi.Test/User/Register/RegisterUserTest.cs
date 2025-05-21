@@ -10,18 +10,18 @@ using WebApi.Test.InlineData;
 
 namespace WebApi.Test.User.Register;
 
-public class RegisterUserTest : MyRecipeBookClassFixture
+public class RegisterUserTest : IClassFixture<CustomWebApplicationFactory> // configura um servidor e recebe minha aplicacao nesse servidor
 {
-    private readonly string method = "user";
+    private readonly HttpClient _httpClient;
 
-    public RegisterUserTest(CustomWebApplicationFactory factory) : base(factory) { }
+    public RegisterUserTest(CustomWebApplicationFactory factory) => _httpClient = factory.CreateClient();
 
     [Fact]
     public async Task Success()
     {
         var request = RequestRegisterUserJsonBuilder.Build();
 
-        var response = await DoPost(method, request);
+        var response = await _httpClient.PostAsJsonAsync("User", request);
 
         response.StatusCode.ShouldBe(HttpStatusCode.Created);
 
@@ -33,6 +33,7 @@ public class RegisterUserTest : MyRecipeBookClassFixture
             responseName => responseName.ShouldNotBeNullOrWhiteSpace(),
             responseName => responseName.ShouldBe(request.Name));
 
+        // acessa o documento com a propriedade "Name" pega como string o valor dela e verifica se satisfaz as condições
     }
 
     [Theory]
@@ -42,7 +43,12 @@ public class RegisterUserTest : MyRecipeBookClassFixture
         var request = RequestRegisterUserJsonBuilder.Build();
         request.Name = string.Empty;
 
-        var response = await DoPost(method, request, culture);
+        if (_httpClient.DefaultRequestHeaders.Contains("Accept-Language"))
+            _httpClient.DefaultRequestHeaders.Remove("Accept-Language");
+
+        _httpClient.DefaultRequestHeaders.Add("Accept-Language", culture);
+
+        var response = await _httpClient.PostAsJsonAsync("User", request);
 
         response.StatusCode.ShouldBe(HttpStatusCode.BadRequest);
 
