@@ -88,6 +88,15 @@ namespace MyRecipeBook.Exceptions {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid email and/or password.
+        /// </summary>
+        public static string EMAIL_OR_PASSWORD_INVALID {
+            get {
+                return ResourceManager.GetString("EMAIL_OR_PASSWORD_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The name cannot be empty..
         /// </summary>
         public static string NAME_EMPTY {
@@ -99,9 +108,9 @@ namespace MyRecipeBook.Exceptions {
         /// <summary>
         ///   Looks up a localized string similar to The password must be longer than 6 characters..
         /// </summary>
-        public static string PASSWORD_EMPTY {
+        public static string PASSWORD_MUST_BE_LONGER_THAN_6_CHARACTERS {
             get {
-                return ResourceManager.GetString("PASSWORD_EMPTY", resourceCulture);
+                return ResourceManager.GetString("PASSWORD_MUST_BE_LONGER_THAN_6_CHARACTERS", resourceCulture);
             }
         }
         

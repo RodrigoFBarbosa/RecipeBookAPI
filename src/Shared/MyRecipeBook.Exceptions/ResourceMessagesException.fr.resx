@@ -126,10 +126,13 @@
   <data name="EMAIL_INVALID" xml:space="preserve">
     <value>L'adresse électronique n'est pas valide.</value>
   </data>
+  <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
+    <value>Email et/ou mot de passe invalide.</value>
+  </data>
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>Le nom ne peut pas être vide.</value>
   </data>
-  <data name="PASSWORD_EMPTY" xml:space="preserve">
+  <data name="PASSWORD_MUST_BE_LONGER_THAN_6_CHARACTERS" xml:space="preserve">
     <value>Le mot de passe doit comporter plus de 6 caractères.</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
