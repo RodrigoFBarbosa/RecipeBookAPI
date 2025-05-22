@@ -32,6 +32,7 @@ public class RegisterUserTest : MyRecipeBookClassFixture
         responseData.RootElement.GetProperty("name").GetString().ShouldSatisfyAllConditions(
             responseName => responseName.ShouldNotBeNullOrWhiteSpace(),
             responseName => responseName.ShouldBe(request.Name));
+        responseData.RootElement.GetProperty("tokens").GetProperty("accessToken").GetString().ShouldNotBeNullOrEmpty();
 
     }
 
