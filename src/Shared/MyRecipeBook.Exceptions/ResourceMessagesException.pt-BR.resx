@@ -129,13 +129,28 @@
   <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
     <value>E-mail e/ou senha inválidos.</value>
   </data>
+  <data name="INVALID_PASSWORD" xml:space="preserve">
+    <value>A senha é inválida.</value>
+  </data>
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>O nome não pode estar vazio.</value>
+  </data>
+  <data name="NO_TOKEN" xml:space="preserve">
+    <value>O token de autorização está ausente na requisição.</value>
+  </data>
+  <data name="PASSWORD_DIFFERENT_CURRENT_PASSWORD" xml:space="preserve">
+    <value>A nova senha deve ser diferente da senha atual.</value>
+  </data>
+  <data name="PASSWORD_EMPTY" xml:space="preserve">
+    <value>A senha não pode ser vazia.</value>
   </data>
   <data name="PASSWORD_MUST_BE_LONGER_THAN_6_CHARACTERS" xml:space="preserve">
     <value>A senha deve ter mais de 6 caracteres.</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
     <value>Erro desconhecido.</value>
+  </data>
+  <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" xml:space="preserve">
+    <value>O usuário não tem permissão para acessar este recurso.</value>
   </data>
 </root>
