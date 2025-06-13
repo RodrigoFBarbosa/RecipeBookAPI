@@ -32,6 +32,10 @@ public class ExceptionFilter : IExceptionFilter
 
             context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
             context.Result = new BadRequestObjectResult(new ResponseErrorJson(exception!.ErrorMessages));
+        }else if (context.Exception is NotFoundException)
+        {
+            context.HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+            context.Result = new NotFoundObjectResult(new ResponseErrorJson(context.Exception.Message));
         }
     }
 
@@ -39,6 +43,5 @@ public class ExceptionFilter : IExceptionFilter
     {
             context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             context.Result = new ObjectResult(new ResponseErrorJson(ResourceMessagesException.UNKNOWN_ERROR));
-        
     }
 }
